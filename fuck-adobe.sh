@@ -9,13 +9,7 @@ echo " normally."
 echo
 echo " SuperUser permissions are required"
 
-sudo rm -f "/Library/LaunchDaemons/com.adobe*"
-out1=$?
-sudo rm -f "/Library/LaunchAgents/com.adobe*"
-out2=$?
-
-if [ "$out1" = "0" ] && [ "$out2" = "0" ] ; then
-	echo " Success! You're free now :)"; exit 0
-fi
+sudo rm -f "/Library/LaunchDaemons/com.adobe*" "/Library/LaunchAgents/com.adobe*" && \
+  exit 0
 
 echo " Failed. Dunno why"
